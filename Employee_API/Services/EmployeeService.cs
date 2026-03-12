@@ -2,5 +2,9 @@
 {
     public class EmployeeService
     {
+        public EmployeeService()
+        {
+            
+        }
     }
 }
