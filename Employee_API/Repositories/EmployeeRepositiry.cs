@@ -46,10 +46,11 @@ namespace Employee_API.Repositories
         }
         public async Task DeleteEmployee(int id)
         {
-            if(_context != null)
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee != null)
             {
-                var employee = _context.Employees.FindAsync(id);
-                _context.Remove(employee);
+                _context.Employees.Remove(employee);
                 await _context.SaveChangesAsync();
             }
         }
