@@ -18,6 +18,10 @@ namespace Employee_API.Services
         {
             return await _repo.GetEmplyeeById(id);
         }
+        public async Task CreateEmployee(Employee employee)
+        {
+            await _repo.CreatEmployee(employee);
+        }
         public async Task UpdateEmployeeAsync(Employee employee)
         {
             await _repo.UpdateEmployee(employee);

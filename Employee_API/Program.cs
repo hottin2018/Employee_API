@@ -1,5 +1,7 @@
 
 using Employee_API.Data;
+using Employee_API.Repositories;
+using Employee_API.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Employee_API
@@ -18,6 +20,9 @@ namespace Employee_API
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<AppDbContext>(options =>
    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<IEmployeeRepository,EmployeeRepositiry>();
+            builder.Services.AddScoped<EmployeeService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
