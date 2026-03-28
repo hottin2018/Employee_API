@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36915.13 d17.14
+VisualStudioVersion = 17.14.36915.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employee_API", "Employee_API\Employee_API.csproj", "{AF2C13B5-F371-4A40-A004-59DB4A59391F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEmployeeAPI", "TestEmployeeAPI\TestEmployeeAPI.csproj", "{3A932454-618A-41AD-8C0E-43CC5504B0FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AF2C13B5-F371-4A40-A004-59DB4A59391F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF2C13B5-F371-4A40-A004-59DB4A59391F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF2C13B5-F371-4A40-A004-59DB4A59391F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A932454-618A-41AD-8C0E-43CC5504B0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A932454-618A-41AD-8C0E-43CC5504B0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A932454-618A-41AD-8C0E-43CC5504B0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A932454-618A-41AD-8C0E-43CC5504B0FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

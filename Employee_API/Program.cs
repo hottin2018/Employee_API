@@ -22,7 +22,7 @@ namespace Employee_API
    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddScoped<IEmployeeRepository,EmployeeRepositiry>();
-            builder.Services.AddScoped<EmployeeService>();
+            builder.Services.AddScoped<IEmployeeService,EmployeeService>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

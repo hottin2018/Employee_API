@@ -9,8 +9,8 @@ namespace Employee_API.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly EmployeeService _service;
-        public EmployeesController(EmployeeService service)
+        private readonly IEmployeeService _service;
+        public EmployeesController(IEmployeeService service)
         {
             _service = service;
         }
@@ -24,7 +24,10 @@ namespace Employee_API.Controllers
         public async Task<IActionResult> GetEmployeeById(int id)
         {
             var employee = await _service.GetEmploeeById(id);
-            return Ok(employee);
+            if (employee != null)
+                return Ok(employee);
+            else
+                return NotFound();
         }
         [HttpPost]
         public async Task<IActionResult> CreateEmployee(Employee employee)

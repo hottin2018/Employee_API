@@ -2,7 +2,7 @@
 using Employee_API.Repositories;
 namespace Employee_API.Services
 {
-    public class EmployeeService
+    public class EmployeeService:IEmployeeService
     {
         private readonly IEmployeeRepository _repo;
         public EmployeeService(IEmployeeRepository repository)
