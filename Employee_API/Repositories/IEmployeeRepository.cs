@@ -9,6 +9,6 @@ namespace Employee_API.Repositories
         Task<Employee> CreatEmployee(Employee employee);
         Task UpdateEmployee(Employee employee);
         Task DeleteEmployee(int id);
-
+        
     }
 }

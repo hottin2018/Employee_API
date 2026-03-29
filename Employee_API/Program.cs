@@ -23,6 +23,7 @@ namespace Employee_API
 
             builder.Services.AddScoped<IEmployeeRepository,EmployeeRepositiry>();
             builder.Services.AddScoped<IEmployeeService,EmployeeService>();
+            builder.Services.AddControllers().AddNewtonsoftJson();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
