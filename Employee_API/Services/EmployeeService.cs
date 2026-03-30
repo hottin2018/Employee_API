@@ -1,5 +1,6 @@
 ﻿using Employee_API.Models;
 using Employee_API.Repositories;
+using Microsoft.AspNetCore.JsonPatch;
 namespace Employee_API.Services
 {
     public class EmployeeService:IEmployeeService
@@ -29,6 +30,10 @@ namespace Employee_API.Services
         public async Task DeleteEmployee(int id)
         {
             await _repo.DeleteEmployee(id);
+        }
+        public async Task PartialUpdateAsync(int id, JsonPatchDocument<Employee> patchDocument)
+        {
+            await _repo.PartialUpdate(id, patchDocument);
         }
     }
 }

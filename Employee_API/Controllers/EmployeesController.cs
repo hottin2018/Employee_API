@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Employee_API.Services;
 using Employee_API.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Employee_API.Controllers
 {
@@ -41,6 +42,22 @@ namespace Employee_API.Controllers
             await _service.UpdateEmployeeAsync(employee);
             return Ok();
         }
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchEmployee(int id, [FromBody] JsonPatchDocument<Employee> pathdoc)
+        {
+            // Validate incoming patch document
+            if (pathdoc == null)
+            {
+                return BadRequest("Invalid Patch Document");
+            }
+
+            // Delegate partial update to service
+            await _service.PartialUpdateAsync(id, pathdoc);
+
+            // Return appropriate status for successful PATCH
+            return NoContent();
+        }
+
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEmployee(int id)
         {
