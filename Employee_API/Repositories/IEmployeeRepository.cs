@@ -1,4 +1,5 @@
 ﻿using Employee_API.Models;
+using Microsoft.AspNetCore.JsonPatch;
 
 namespace Employee_API.Repositories
 {
@@ -9,6 +10,7 @@ namespace Employee_API.Repositories
         Task<Employee> CreatEmployee(Employee employee);
         Task UpdateEmployee(Employee employee);
         Task DeleteEmployee(int id);
+        Task PartialUpdate(int id, JsonPatchDocument<Employee> patchDocument);
         
     }
 }
